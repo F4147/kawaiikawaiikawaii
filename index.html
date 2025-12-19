@@ -93,25 +93,24 @@
             }
         }
 
-       .input-wrapper {
-    /* 1. 背景色は完全に透明、または0.01（1%）に */
-    background: rgba(255, 255, 255, 0); 
+  .input-wrapper {
+    /* 背景は完全透明 */
+    background: transparent; 
     
     padding: 40px 50px;
-    border-radius: 20px;
+    border-radius: 30px; /* 角丸を少し大きくすると、より「塊」としての認識が柔らかくなります */
 
-    /* 2. 境界線は「内側の極細の光」だけで表現 */
+    /* 影の設定：線を消し、ぼんやりとした浮遊感だけを残す */
     box-shadow: 
-        0 8px 32px 0 rgba(0, 0, 0, 0.15), /* 外側の影を少し柔らかく */
-        inset 0 0 0 1px rgba(255, 255, 255, 0.15); /* 1pxの光の筋。これが境界線になる */
+        0 15px 45px 0 rgba(0, 0, 0, 0.08),  /* 外側の影を非常に薄く、広く広げる */
+        inset 0 0 80px 0 rgba(255, 255, 255, 0.05); /* 線の代わりに、内側全体をほんのり発光させる */
 
-    /* 3. ぼかしを最小限にし、明るさで「枠内」を主張する */
-    /* ぼかし(blur)を小さくするほど透明感が増します */
-    backdrop-filter: blur(2px) brightness(1.15) contrast(1.1);
-    -webkit-backdrop-filter: blur(2px) brightness(1.15) contrast(1.1);
+    /* フィルター：ぼかしを最小限にし、明るさの「面」を作る */
+    backdrop-filter: blur(2px) brightness(1.12);
+    -webkit-backdrop-filter: blur(2px) brightness(1.12);
 
+    border: none;
     position: relative;
-    overflow: hidden;
     max-width: 500px;
 }
 

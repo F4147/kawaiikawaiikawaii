@@ -46,7 +46,7 @@
             opacity: 0.3;
             z-index: 0;
         }
-        /* 使用例：<img src="IMG_0439.JPG" alt="" class="background-image"> */
+        /* 使用例：<img src="背景画像.jpg" alt="" class="background-image"> */
 
         /* 背景の雪の結晶アニメーション */
         .snowflake {
@@ -94,9 +94,10 @@
         }
 
         .input-wrapper {
-            background: rgba(255, 255, 255, 0);
+            background: transparent;
             padding: 40px 50px;
             border-radius: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.8);
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
             backdrop-filter: blur(10px);
             position: relative;
@@ -226,7 +227,7 @@
     <!-- ========================================
          ★★★ 背景画像を追加する場合 ★★★
          下の行のコメントを外して、ファイル名を変更してください
-         例：<img src="IMG_0439.JPG" alt="" class="background-image">
+         例：<img src="入力ページ背景.jpg" alt="" class="background-image">
          ======================================== -->
     <img src="IMG_0439.JPG" alt="" class="background-image">
 
@@ -277,8 +278,8 @@
         const img = document.getElementById('bouncingImg');
         let x = Math.random() * (window.innerWidth - 100);
         let y = Math.random() * (window.innerHeight - 100);
-        let dx = 1.14;
-        let dy = 1.14;
+        let dx = 0.74; // 速度を落とす（元：3）
+        let dy = 0.74; // 速度を落とす（元：3）
 
         function animateBounce() {
             const imgWidth = img.offsetWidth;
@@ -304,8 +305,9 @@
 
         // ========================================
         // ★★★ 正解ワードの設定 ★★★
+        // 下の「メリークリスマス」を変更してください
         // ========================================
-        const CORRECT_ANSWER = '2025.07.16';
+        const CORRECT_ANSWER = 'メリークリスマス';
         
         const form = document.getElementById('quizForm');
         const input = document.getElementById('answerInput');
